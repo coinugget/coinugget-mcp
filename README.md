@@ -2,7 +2,7 @@
 
 Real-time cryptocurrency market signals via [Model Context Protocol (MCP)](https://modelcontextprotocol.io).
 
-Tracks 500+ coins across Binance, Bybit, and Gate.io — RSI signals, top gainers, price action, kimchi premium, major market prices, and derivatives data. Updated every 60 seconds.
+Tracks 500+ coins across Binance, Bybit, and Gate.io — RSI signals, top gainers, price action, kimchi premium, major market prices, derivatives, liquidations, futures, Fear & Greed Index, ETF flows, and monthly returns. Updated every 60 seconds.
 
 ## Endpoint
 
@@ -12,7 +12,7 @@ https://mcp.coinugget.com/mcp
 
 No authentication required. Free and publicly accessible.
 
-## Tools (7)
+## Tools (13)
 
 | Tool | Description |
 |------|-------------|
@@ -22,6 +22,12 @@ No authentication required. Free and publicly accessible.
 | `get_kimchi` | Korean kimchi premium + 10-country regional premiums |
 | `get_markets` | BTC, ETH, NASDAQ, GOLD, VIX and more with 24h changes |
 | `get_derivatives` | 24h liquidation summary + long/short ratios |
+| `get_premiums` | 10-country Bitcoin regional premiums with exchange rates |
+| `get_liquidations` | Detailed 24h liquidation data by coin (top 20) |
+| `get_futures` | Funding rates, open interest, long/short ratios (top 50) |
+| `get_fear_greed` | Crypto Fear & Greed Index (0-100) with 30-day history |
+| `get_etf_flows` | Crypto ETF net flows for BTC, ETH, SOL, HYPE (30 days) |
+| `get_returns` | Monthly return heatmap for BTC, ETH, SOL, XRP |
 | `get_full_snapshot` | Complete market snapshot (all data combined) |
 
 ## Connect
@@ -33,6 +39,17 @@ claude mcp add coinugget-crypto-signals --transport http https://mcp.coinugget.c
 
 ### Claude Desktop
 Settings → MCP Servers → Add → URL: `https://mcp.coinugget.com/mcp`
+
+### Cursor / Windsurf / Generic
+```json
+{
+  "mcpServers": {
+    "coinugget": {
+      "url": "https://mcp.coinugget.com/mcp"
+    }
+  }
+}
+```
 
 ## Source
 
